@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Tool cards — placeholders for now
+const tools = [
+  {
+    title: "Stitch Counter",
+    description:
+      "A simple counter for crochet and knitting projects — track stitches, rows, and progress like running an algorithm in yarn form.",
+    status: "Ready soon",
+    link: "/tools/stitch-counter",
+  },
+  {
+    title: "Siteswap Validator",
+    description:
+      "Input a juggling pattern and validate its Siteswap notation. A small tool that translates movement into logic and math.",
+    status: "Prototype",
+    link: "/tools/siteswap-validator",
+  },
+  {
+    title: "BPM Tap & Metronome",
+    description:
+      "Tap along to detect beats per minute or set a tempo for your music practice. A demonstration of timing precision and rhythm logic.",
+    status: "MVP",
+    link: "/tools/bpm-tap",
+  },
+  {
+    title: "Language Rhyme Finder",
+    description:
+      "Find rhymes and patterns across words — connecting linguistics, logic, and creativity.",
+    status: "Planned",
+    link: "#",
+  },
+  {
+    title: "Pomodoro Rhythm Timer",
+    description:
+      "A focus timer that blends time management with a touch of visual harmony — balancing productivity and flow.",
+    status: "Planned",
+    link: "#",
+  },
+];
+---
+
+<BaseLayout title="Tools | Juliano">
+  <section class="space-y-12">
+    <!-- Intro -->
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl font-bold text-gray-900">Tools & Experiments</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Small utilities and experiments that reflect how I think about code, structure, and creativity.
+        Each one connects logic from software to the beauty found in everyday patterns.
+      </p>
+    </div>
+
+    <!-- Tools grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map((tool) => (
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col">
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{tool.title}</h3>
+            <p class="text-gray-700 mb-4">{tool.description}</p>
+            <span class="text-sm text-gray-500 italic">Status: {tool.status}</span>
+          </div>
+          <div class="p-4 border-t text-center">
+            <a
+              href={tool.link}
+              class={`inline-block px-4 py-2 rounded transition ${
+                tool.link === "#"
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-gray-800 text-white hover:bg-yellow-400"
+              }`}
+            >
+              {tool.link === "#" ? "Coming Soon" : "Try It"}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16 space-y-4">
+      <p class="text-gray-700 text-lg">
+        These tools are open to improvement and collaboration.  
+        Got an idea or want to contribute?
+      </p>
+      <a href="/contact"
+         class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">
+        Contact Me
+      </a>
+    </div>
+  </section>
+</BaseLayout>
