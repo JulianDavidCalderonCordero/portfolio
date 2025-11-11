@@ -1,0 +1,34 @@
+---
+import ToolsLayout from '../../../layouts/ToolsLayout.astro';
+---
+
+<ToolsLayout title="Contador de Puntos" icon="🧶">
+  <section class="space-y-8 text-center">
+    <p class="text-gray-700">
+      Lleva el control de tus puntos y filas de crochet o tejido — simple, enfocado y satisfactorio.
+    </p>
+
+    <div class="flex flex-col items-center space-y-4">
+      <div id="count" class="text-6xl font-bold text-gray-900">0</div>
+      <div class="flex gap-4">
+        <button id="decrease" class="px-6 py-3 bg-gray-300 rounded hover:bg-gray-400 transition">−</button>
+        <button id="reset" class="px-6 py-3 bg-yellow-400 text-white rounded hover:bg-yellow-500 transition">Reiniciar</button>
+        <button id="increase" class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">+</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const countEl = document.getElementById('count');
+    let count = 0;
+    document.getElementById('increase')!.onclick = () => {
+      count++; countEl!.textContent = count.toString();
+    };
+    document.getElementById('decrease')!.onclick = () => {
+      if (count > 0) count--; countEl!.textContent = count.toString();
+    };
+    document.getElementById('reset')!.onclick = () => {
+      count = 0; countEl!.textContent = count.toString();
+    };
+  </script>
+</ToolsLayout>

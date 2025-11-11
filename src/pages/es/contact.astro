@@ -1,15 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact | Juliano">
+<BaseLayout title="Contacto | Juliano">
   <section class="space-y-12">
     <!-- Intro -->
     <div class="text-center space-y-4">
-      <h1 class="text-4xl font-bold text-gray-900">Get in Touch</h1>
+      <h1 class="text-4xl font-bold text-gray-900">Ponte en Contacto</h1>
       <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-        Whether you’d like to discuss a project, request mentorship, or just exchange ideas about
-        software, creativity, or learning — I’d love to hear from you.
+        Ya sea que quieras discutir un proyecto, solicitar mentoría, o simplemente intercambiar ideas sobre
+        software, creatividad o aprendizaje — me encantaría escucharte.
       </p>
     </div>
 
@@ -17,21 +17,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="grid md:grid-cols-3 gap-6 text-center">
       <div class="bg-gray-50 rounded-lg p-6 shadow">
         <h3 class="font-semibold text-xl mb-2">Email</h3>
-        <p class="text-gray-700">Reach me directly:</p>
+        <p class="text-gray-700">Contáctame directamente:</p>
         <a href="mailto:hello@juliano.com.co"
            class="text-yellow-500 hover:text-yellow-600 font-medium">hello@juliano.com.co</a>
       </div>
 
       <div class="bg-gray-50 rounded-lg p-6 shadow">
         <h3 class="font-semibold text-xl mb-2">LinkedIn</h3>
-        <p class="text-gray-700">Let’s connect professionally:</p>
+        <p class="text-gray-700">Conectemos profesionalmente:</p>
         <a href="https://linkedin.com/in/juliano"
            target="_blank" class="text-yellow-500 hover:text-yellow-600 font-medium">linkedin.com/in/juliano</a>
       </div>
 
       <div class="bg-gray-50 rounded-lg p-6 shadow">
         <h3 class="font-semibold text-xl mb-2">GitHub</h3>
-        <p class="text-gray-700">Explore my open-source projects:</p>
+        <p class="text-gray-700">Explora mis proyectos open-source:</p>
         <a href="https://github.com/juliano"
            target="_blank" class="text-yellow-500 hover:text-yellow-600 font-medium">github.com/juliano</a>
       </div>
@@ -39,10 +39,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Contact form -->
     <div class="max-w-2xl mx-auto bg-white rounded-lg shadow p-8">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Send a Message</h2>
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Envía un Mensaje</h2>
       <form action="https://formspree.io/f/xzzybygg" method="POST" class="space-y-6">
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
           <input id="name" name="name" type="text" required
                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
         </div>
@@ -54,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
           <textarea id="message" name="message" rows="5" required
                     class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"></textarea>
         </div>
@@ -62,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="text-center">
           <button type="submit"
                   class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">
-            Send Message
+            Enviar Mensaje
           </button>
         </div>
       </form>

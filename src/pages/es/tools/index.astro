@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+// Tool cards — placeholders for now
+const tools = [
+  {
+    title: "Contador de Puntos",
+    description:
+      "Un contador simple para proyectos de crochet y tejido — rastrea puntos, filas y progreso como ejecutando un algoritmo en forma de hilo.",
+    status: "Listo pronto",
+    link: "/es/tools/stitch-counter",
+  },
+  {
+    title: "Validador Siteswap",
+    description:
+      "Ingresa un patrón de malabarismo y valida su notación Siteswap. Una herramienta pequeña que traduce movimiento en lógica y matemática.",
+    status: "Prototipo",
+    link: "/es/tools/siteswap-validator",
+  },
+  {
+    title: "BPM Tap & Metrónomo",
+    description:
+      "Toca siguiendo el ritmo para detectar pulsaciones por minuto o establece un tempo para tu práctica musical. Una demostración de precisión de timing y lógica rítmica.",
+    status: "MVP",
+    link: "/es/tools/bpm-tap",
+  },
+  {
+    title: "Temporizador Ritmo Pomodoro",
+    description:
+      "Un temporizador de enfoque que fusiona gestión del tiempo con un toque de armonía visual — equilibrando productividad y flujo.",
+    status: "MVP",
+    link: "/es/tools/pomodoro",
+  },
+];
+---
+
+<BaseLayout title="Herramientas | Juliano">
+  <section class="space-y-12">
+    <!-- Intro -->
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl font-bold text-gray-900">Herramientas y Experimentos</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Utilidades pequeñas y experimentos que reflejan cómo pienso sobre el código, estructura y creatividad.
+        Cada una conecta lógica del software con la belleza encontrada en patrones cotidianos.
+      </p>
+    </div>
+
+    <!-- Tools grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map((tool) => (
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col">
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{tool.title}</h3>
+            <p class="text-gray-700 mb-4">{tool.description}</p>
+            <span class="text-sm text-gray-500 italic">Estado: {tool.status}</span>
+          </div>
+          <div class="p-4 border-t text-center">
+            <a
+              href={tool.link}
+              class={`inline-block px-4 py-2 rounded transition ${
+                tool.link === "#"
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-gray-800 text-white hover:bg-yellow-400"
+              }`}
+            >
+              {tool.link === "#" ? "Próximamente" : "Pruébalo"}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16 space-y-4">
+      <p class="text-gray-700 text-lg">
+        Estas son mis herramientas personales y experimentos creativos — evolucionando constantemente mientras exploro nuevas ideas y patrones.
+      </p>
+      <a href="/es/contact"
+         class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">
+        Contáctame
+      </a>
+    </div>
+  </section>
+</BaseLayout>

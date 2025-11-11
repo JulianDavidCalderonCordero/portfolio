@@ -1,5 +1,9 @@
+---
+const currentLocale = Astro.currentLocale;
+---
+
 <footer class="bg-gray-200 text-gray-700 py-6 mt-8">
   <div class="container mx-auto px-4 text-center">
-    <p>© {new Date().getFullYear()} Juliano. All rights reserved.</p>
+    <p>© {new Date().getFullYear()} Juliano. {currentLocale === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
   </div>
 </footer>

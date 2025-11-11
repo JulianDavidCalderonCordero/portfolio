@@ -1,11 +1,22 @@
+---
+const currentLocale = Astro.currentLocale;
+const localePrefix = currentLocale && currentLocale !== 'en' ? `/${currentLocale}` : '';
+---
+
 <nav class="bg-gray-800 text-white shadow-md">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-bold">Juliano</a>
-    <ul class="flex space-x-6">
-      <li><a href="/" class="hover:text-yellow-400 transition-colors">Home</a></li>
-      <li><a href="/about" class="hover:text-yellow-400 transition-colors">About</a></li>
-      <li><a href="/tools" class="hover:text-yellow-400 transition-colors">Tools</a></li>
-      <li><a href="/contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
-    </ul>
+    <a href={`${localePrefix}/`} class="text-xl font-bold">Juliano</a>
+    <div class="flex items-center space-x-6">
+      <ul class="flex space-x-6">
+        <li><a href={`${localePrefix}/`} class="hover:text-yellow-400 transition-colors">{currentLocale === 'es' ? 'Inicio' : 'Home'}</a></li>
+        <li><a href={`${localePrefix}/about`} class="hover:text-yellow-400 transition-colors">{currentLocale === 'es' ? 'Acerca de' : 'About'}</a></li>
+        <li><a href={`${localePrefix}/tools`} class="hover:text-yellow-400 transition-colors">{currentLocale === 'es' ? 'Herramientas' : 'Tools'}</a></li>
+        <li><a href={`${localePrefix}/contact`} class="hover:text-yellow-400 transition-colors">{currentLocale === 'es' ? 'Contacto' : 'Contact'}</a></li>
+      </ul>
+      <div class="flex space-x-2 ml-6">
+        <a href={Astro.url.pathname.replace(/^\/es/, '') || '/'} class={`px-3 py-1 rounded text-sm font-medium transition-colors ${(currentLocale === 'en' || !currentLocale) ? 'bg-yellow-400 text-gray-900' : 'hover:bg-gray-700'}`}>EN</a>
+        <a href={`/es${Astro.url.pathname.replace(/^\/es/, '')}`} class={`px-3 py-1 rounded text-sm font-medium transition-colors ${currentLocale === 'es' ? 'bg-yellow-400 text-gray-900' : 'hover:bg-gray-700'}`}>ES</a>
+      </div>
+    </div>
   </div>
 </nav>

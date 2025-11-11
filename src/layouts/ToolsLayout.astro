@@ -7,15 +7,17 @@ interface Props {
 }
 
 const { title, icon } = Astro.props;
+const currentLocale = Astro.currentLocale;
+const localePrefix = currentLocale && currentLocale !== 'en' ? `/${currentLocale}` : '';
 ---
 
-<BaseLayout title={`${title} | Tools | Juliano`}>
+<BaseLayout title={`${title} | ${currentLocale === 'es' ? 'Herramientas' : 'Tools'} | Juliano`}>
   <div class="max-w-3xl mx-auto space-y-10">
     <!-- Breadcrumb -->
     <nav class="text-sm text-gray-500 mb-2">
-      <a href="/" class="hover:text-yellow-500">Home</a>
+      <a href={`${localePrefix}/`} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Inicio' : 'Home'}</a>
       <span class="mx-2">/</span>
-      <a href="/tools" class="hover:text-yellow-500">Tools</a>
+      <a href={`${localePrefix}/tools`} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Herramientas' : 'Tools'}</a>
       <span class="mx-2">/</span>
       <span class="text-gray-700">{title}</span>
     </nav>

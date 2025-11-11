@@ -1,0 +1,47 @@
+---
+import ToolsLayout from '../../../layouts/ToolsLayout.astro';
+---
+
+<ToolsLayout title="BPM Tap" icon="🎵">
+  <section class="space-y-8 text-center">
+    <p class="text-gray-700">
+      Toca el botón (o la barra espaciadora) para encontrar el tempo en pulsaciones por minuto.
+    </p>
+
+    <div id="bpm" class="text-6xl font-bold text-gray-900">0</div>
+    <button
+      id="tap"
+      class="px-10 py-4 bg-gray-800 text-white rounded hover:bg-yellow-400 transition text-xl"
+    >
+      TAP
+    </button>
+    <p id="hint" class="text-gray-500 text-sm">Toca rítmicamente o presiona la barra espaciadora.</p>
+  </section>
+
+  <script>
+    const tapBtn = document.getElementById('tap');
+    const bpmDisplay = document.getElementById('bpm');
+    const times: number[] = [];
+
+    function calculateBPM() {
+      if (times.length < 2) return 0;
+      const intervals = [];
+      for (let i = 1; i < times.length; i++) {
+        intervals.push(times[i] - times[i - 1]);
+      }
+      const avg = intervals.reduce((a, b) => a + b, 0) / intervals.length;
+      return Math.round(60000 / avg);
+    }
+
+    function tap() {
+      const now = Date.now();
+      times.push(now);
+      if (times.length > 5) times.shift();
+      const bpm = calculateBPM();
+      bpmDisplay!.textContent = bpm.toString() || '–';
+    }
+
+    tapBtn!.onclick = tap;
+    window.onkeydown = (e) => { if (e.code === 'Space') tap(); };
+  </script>
+</ToolsLayout>
