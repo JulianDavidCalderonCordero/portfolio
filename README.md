@@ -88,6 +88,11 @@ This project is configured for deployment to Cloudflare Workers/Pages:
    npm run cf-dev
    ```
 
+   Or for a full local preview:
+   ```sh
+   npm run cf-preview
+   ```
+
 ## 📧 Contact Form
 
 The contact forms use Formspree for form submissions. The endpoint is configured in the contact pages.

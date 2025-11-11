@@ -7,9 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy",
-    "cf-dev": "wrangler dev",
-    "cf-preview": "npm run build && wrangler dev --local"
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "cf-dev": "wrangler pages dev dist",
+    "cf-preview": "npm run build && wrangler pages dev dist --local"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
