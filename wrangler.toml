@@ -1,0 +1,21 @@
+name = "portfolio"
+compatibility_date = "2024-11-11"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Pages configuration
+pages_build_output_dir = "dist"
+
+# Environment variables (uncomment and add as needed)
+# [vars]
+# MY_VAR = "my-value"
+
+# KV namespaces (uncomment if you need KV storage)
+# [[kv_namespaces]]
+# binding = "SESSION"
+# id = "your-kv-namespace-id"
+
+# D1 databases (uncomment if you need D1)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "your-database-name"
+# database_id = "your-database-id"
