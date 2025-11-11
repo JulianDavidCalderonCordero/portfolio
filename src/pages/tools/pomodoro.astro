@@ -1,0 +1,188 @@
+---
+import ToolsLayout from '../../layouts/ToolsLayout.astro';
+---
+
+<ToolsLayout title="Pomodoro Timer" icon="🍅">
+  <section class="space-y-8 text-center">
+    <p class="text-gray-700">
+      Boost your productivity with focused work sessions and strategic breaks using the Pomodoro Technique.
+    </p>
+
+    <div
+      id="pomodoro"
+      class="bg-[#2a2a3d] rounded-xl shadow-2xl
+        p-4 sm:p-8 lg:p-16
+        text-center
+        w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto"
+    >
+      <!-- Session label -->
+      <div class="session-label text-xl sm:text-2xl font-semibold mb-2 text-white">
+        Pomodoro
+      </div>
+
+      <!-- Pomodoro count -->
+      <div
+        class="pomodoro-count text-sm sm:text-base mb-6 opacity-80 cursor-pointer hover:opacity-100 transition text-white"
+      >
+        Pomodoro #1
+      </div>
+
+      <!-- Timer -->
+      <div class="time text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 text-white font-mono">25:00</div>
+
+      <!-- Buttons -->
+      <div class="flex gap-4 sm:gap-6 justify-center flex-wrap">
+        <button
+          class="start px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
+  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
+        >
+          Start
+        </button>
+
+        <button
+          class="pause px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
+        >
+          Pause
+        </button>
+
+        <button
+          class="reset px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /// <reference lib="dom" />
+    const container = document.getElementById("pomodoro");
+    const timeDisplay = container?.querySelector(".time") as HTMLElement;
+    const startBtn = container?.querySelector(".start") as HTMLButtonElement;
+    const pauseBtn = container?.querySelector(".pause") as HTMLButtonElement;
+    const resetBtn = container?.querySelector(".reset") as HTMLButtonElement;
+    const label = container?.querySelector(".session-label") as HTMLElement;
+    const countLabel = container?.querySelector(".pomodoro-count") as HTMLElement;
+
+    let interval: number | undefined = undefined;
+
+    const POMODORO_TIME = 25 * 60;
+    const SHORT_BREAK = 5 * 60;
+    const LONG_BREAK = 15 * 60;
+
+    let seconds = POMODORO_TIME;
+    let cycle = 1;
+    let mode = "pomodoro";
+
+    function updateTimeUI() {
+      const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+      const s = String(seconds % 60).padStart(2, "0");
+      timeDisplay.textContent = `${m}:${s}`;
+    }
+
+    function updateLabels() {
+      label.textContent =
+        mode === "pomodoro" ? "Pomodoro" :
+        mode === "short" ? "Short Break" :
+        "Long Break";
+
+      countLabel.textContent = `Pomodoro #${cycle}`;
+    }
+
+    function setButtonState(state: string) {
+      if (state === "running") {
+        startBtn.disabled = true;
+        startBtn.textContent = "Start";
+        resetBtn.disabled = true;
+        pauseBtn.disabled = false;
+      } else if (state === "paused") {
+        pauseBtn.disabled = true;
+        startBtn.disabled = false;
+        startBtn.textContent = "Resume";
+        resetBtn.disabled = false;
+      } else if (state === "stopped") {
+        startBtn.disabled = false;
+        startBtn.textContent = "Start";
+        pauseBtn.disabled = true;
+        resetBtn.disabled = true;
+      }
+    }
+
+    function switchMode() {
+      clearInterval(interval);
+      interval = undefined;
+
+      if (mode === "pomodoro") {
+        if (cycle % 4 === 0) {
+          mode = "long";
+          seconds = LONG_BREAK;
+        } else {
+          mode = "short";
+          seconds = SHORT_BREAK;
+        }
+      } else {
+        mode = "pomodoro";
+        cycle++;
+        seconds = POMODORO_TIME;
+      }
+
+      updateLabels();
+      updateTimeUI();
+      setButtonState("stopped");
+    }
+
+    // Click pomodoro count to restart whole cycle
+    countLabel.addEventListener("click", () => {
+      clearInterval(interval);
+      interval = undefined;
+
+      mode = "pomodoro";
+      cycle = 1;
+      seconds = POMODORO_TIME;
+
+      updateLabels();
+      updateTimeUI();
+      setButtonState("stopped");
+    });
+
+    startBtn.addEventListener("click", () => {
+      if (interval) return;
+
+      interval = setInterval(() => {
+        seconds--;
+        updateTimeUI();
+
+        if (seconds <= 0) {
+          switchMode();
+        }
+      }, 1000) as unknown as number;
+
+      setButtonState("running");
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      clearInterval(interval);
+      interval = undefined;
+      setButtonState("paused");
+    });
+
+    resetBtn.addEventListener("click", () => {
+      clearInterval(interval);
+      interval = undefined;
+
+      seconds = mode === "pomodoro" ? POMODORO_TIME :
+                mode === "short" ? SHORT_BREAK :
+                LONG_BREAK;
+
+      updateTimeUI();
+      setButtonState("stopped");
+    });
+
+    // initial render
+    updateLabels();
+    updateTimeUI();
+    setButtonState("stopped");
+  </script>
+</ToolsLayout>
