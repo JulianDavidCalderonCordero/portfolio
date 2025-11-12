@@ -2,10 +2,10 @@
 import ToolsLayout from '../../layouts/ToolsLayout.astro';
 ---
 
-<ToolsLayout title="Pomodoro Timer" icon="🍅">
+<ToolsLayout title="Temporizador Pomodoro" icon="🍅">
   <section class="space-y-8 text-center">
     <p class="text-gray-700">
-      Boost your productivity with focused work sessions and strategic breaks using the Pomodoro Technique.
+      Aumenta tu productividad con sesiones de trabajo enfocadas y descansos estratégicos usando la Técnica Pomodoro.
     </p>
 
     <div
@@ -36,21 +36,21 @@ import ToolsLayout from '../../layouts/ToolsLayout.astro';
           class="start px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
   disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
         >
-          Start
+          Iniciar
         </button>
 
         <button
           class="pause px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
       disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
         >
-          Pause
+          Pausar
         </button>
 
         <button
           class="reset px-6 py-3 rounded-lg bg-[#4e4e72] hover:bg-[#6a6aac] cursor-pointer
       disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#4e4e72] text-base sm:text-lg text-white"
         >
-          Reset
+          Reiniciar
         </button>
       </div>
     </div>
@@ -85,8 +85,8 @@ import ToolsLayout from '../../layouts/ToolsLayout.astro';
     function updateLabels() {
       label.textContent =
         mode === "pomodoro" ? "Pomodoro" :
-        mode === "short" ? "Short Break" :
-        "Long Break";
+        mode === "short" ? "Descanso Corto" :
+        "Descanso Largo";
 
       countLabel.textContent = `Pomodoro #${cycle}`;
     }
@@ -94,17 +94,17 @@ import ToolsLayout from '../../layouts/ToolsLayout.astro';
     function setButtonState(state: string) {
       if (state === "running") {
         startBtn.disabled = true;
-        startBtn.textContent = "Start";
+        startBtn.textContent = "Iniciar";
         resetBtn.disabled = true;
         pauseBtn.disabled = false;
       } else if (state === "paused") {
         pauseBtn.disabled = true;
         startBtn.disabled = false;
-        startBtn.textContent = "Resume";
+        startBtn.textContent = "Reanudar";
         resetBtn.disabled = false;
       } else if (state === "stopped") {
         startBtn.disabled = false;
-        startBtn.textContent = "Start";
+        startBtn.textContent = "Iniciar";
         pauseBtn.disabled = true;
         resetBtn.disabled = true;
       }

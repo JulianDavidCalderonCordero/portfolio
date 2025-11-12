@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "tools": "Tools"
+  },
+  "home": {
+    "title": "Hello, I'm Juliano",
+    "subtitle": "Software engineer, musician, juggler, and yarn artist. I explore patterns in life and code.",
+    "yarnArts": "Yarn Arts",
+    "yarnArtsDesc": "Crochet & knitting, exploring algorithms in patterns.",
+    "juggling": "Juggling",
+    "jugglingDesc": "Patterns and sequences in motion, like state diagrams.",
+    "music": "Music",
+    "musicDesc": "Timing, harmony, and mathematical patterns inspire logic.",
+    "languages": "Languages",
+    "languagesDesc": "Grammar and structure as logic, abstraction, and inheritance.",
+    "toolsLink": "Tools"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm Juliano — a software engineer who finds structure, rhythm, and creativity not only in code, but also in music, languages, juggling, and yarn arts.",
+    "softwareTitle": "Software & Problem-Solving",
+    "softwareDesc": "I love building reliable, elegant systems — whether that means writing APIs, designing architectures, or crafting UI experiences that make complex ideas feel simple. My approach is grounded in pattern recognition and clear logic, yet always open to artistic intuition.",
+    "yarnArtsTitle": "Yarn Arts 🧶",
+    "yarnArtsDesc": "Crochet and knitting are pattern languages. Each stitch is a small instruction, like a line of code. Understanding foundations lets me replicate or adapt any design — just like mastering the fundamentals of programming logic.",
+    "jugglingTitle": "Juggling 🎪",
+    "jugglingDesc": "Siteswap notation and juggling diagrams remind me of state machines and graphs. They teach me how to break motion into data and see beauty in mathematical balance.",
+    "musicTitle": "Music 🎵",
+    "musicDesc": "Music blends math and emotion — rhythm and harmony mirror timing and architecture in software. I see every well-structured system as a kind of composition.",
+    "languagesTitle": "Languages 🌍",
+    "languagesDesc": "Natural languages have syntax, semantics, and context — just like programming languages. Studying their grammar and variations sharpens my sense of abstraction, inheritance, and design.",
+    "closing": "These disciplines together shape how I design, learn, and collaborate. My goal is to build software that feels intuitive — where technical precision meets artistic clarity.",
+    "contactLink": "Contact Me"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": "A collection of my work that merges software engineering with creativity — connecting logic, rhythm, and design across different disciplines.",
+    "projects": "Projects",
+    "viewProject": "View Project"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "intro": "Whether you'd like to discuss a project, request mentorship, or just exchange ideas about software, creativity, or learning — I'd love to hear from you.",
+    "email": "Email",
+    "emailDesc": "Reach me directly:",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Let's connect professionally:",
+    "github": "GitHub",
+    "githubDesc": "Explore my open-source projects:",
+    "formTitle": "Send a Message",
+    "name": "Name",
+    "emailLabel": "Email",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent successfully.",
+    "error": "Sorry, there was an error sending your message. Please try again."
+  },
+  "tools": {
+    "title": "Tools & Experiments",
+    "intro": "Small utilities and experiments that reflect how I think about code, structure, and creativity. Each one connects logic from software to the beauty found in everyday patterns.",
+    "stitchCounter": "Stitch Counter",
+    "stitchCounterDesc": "A simple counter for crochet and knitting projects — track stitches, rows, and progress like running an algorithm in yarn form.",
+    "siteswapValidator": "Siteswap Validator",
+    "siteswapValidatorDesc": "Input a juggling pattern and validate its Siteswap notation. A small tool that translates movement into logic and math.",
+    "bpmTap": "BPM Tap & Metronome",
+    "bpmTapDesc": "Tap along to detect beats per minute or set a tempo for your music practice. A demonstration of timing precision and rhythm logic.",
+    "pomodoro": "Pomodoro Rhythm Timer",
+    "pomodoroDesc": "A focus timer that blends time management with a touch of visual harmony — balancing productivity and flow.",
+    "readySoon": "Ready soon",
+    "prototype": "Prototype",
+    "mvp": "MVP",
+    "comingSoon": "Coming Soon",
+    "tryIt": "Try It",
+    "footerText": "These are my personal tools and creative experiments — constantly evolving as I explore new ideas and patterns.",
+    "contactLink": "Contact Me"
+  },
+  "footer": {
+    "copyright": "© 2025 Juliano. All rights reserved."
+  }
+}

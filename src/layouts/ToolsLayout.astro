@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 interface Props {
   title: string;
@@ -7,17 +8,16 @@ interface Props {
 }
 
 const { title, icon } = Astro.props;
-const currentLocale = Astro.currentLocale;
-const localePrefix = currentLocale && currentLocale !== 'en' ? `/${currentLocale}` : '';
+const currentLocale = Astro.currentLocale || 'es'; // Default to Spanish
 ---
 
 <BaseLayout title={`${title} | ${currentLocale === 'es' ? 'Herramientas' : 'Tools'} | Juliano`}>
   <div class="max-w-3xl mx-auto space-y-10">
     <!-- Breadcrumb -->
     <nav class="text-sm text-gray-500 mb-2">
-      <a href={`${localePrefix}/`} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Inicio' : 'Home'}</a>
+      <a href={getRelativeLocaleUrl(currentLocale, '/')} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Inicio' : 'Home'}</a>
       <span class="mx-2">/</span>
-      <a href={`${localePrefix}/tools`} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Herramientas' : 'Tools'}</a>
+      <a href={getRelativeLocaleUrl(currentLocale, '/tools')} class="hover:text-yellow-500">{currentLocale === 'es' ? 'Herramientas' : 'Tools'}</a>
       <span class="mx-2">/</span>
       <span class="text-gray-700">{title}</span>
     </nav>
@@ -29,7 +29,10 @@ const localePrefix = currentLocale && currentLocale !== 'en' ? `/${currentLocale
       )}
       <h1 class="text-4xl font-bold text-gray-900">{title}</h1>
       <p class="text-gray-500 text-sm">
-        Part of my creative toolkit — bridging code, logic, and art.
+        {currentLocale === 'es'
+          ? 'Parte de mi caja de herramientas creativa — conectando código, lógica y arte.'
+          : 'Part of my creative toolkit — bridging code, logic, and art.'
+        }
       </p>
     </header>
 

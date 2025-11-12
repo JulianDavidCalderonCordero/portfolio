@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { loadTranslations, t } from '../../utils/i18n';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { loadTranslations, t } from '../../../utils/i18n';
 
-const locale = 'es'; // Spanish is default for root pages
+const locale = 'en'; // English for en/ pages
 await loadTranslations(locale);
 
 // Tool cards — using translations
@@ -11,25 +11,25 @@ const tools = [
     title: t('tools.stitchCounter', locale),
     description: t('tools.stitchCounterDesc', locale),
     status: t('tools.readySoon', locale),
-    link: "/tools/stitch-counter",
+    link: "/en/tools/stitch-counter",
   },
   {
     title: t('tools.siteswapValidator', locale),
     description: t('tools.siteswapValidatorDesc', locale),
     status: t('tools.prototype', locale),
-    link: "/tools/siteswap-validator",
+    link: "/en/tools/siteswap-validator",
   },
   {
     title: t('tools.bpmTap', locale),
     description: t('tools.bpmTapDesc', locale),
     status: t('tools.mvp', locale),
-    link: "/tools/bpm-tap",
+    link: "/en/tools/bpm-tap",
   },
   {
     title: t('tools.pomodoro', locale),
     description: t('tools.pomodoroDesc', locale),
     status: t('tools.mvp', locale),
-    link: "/tools/pomodoro",
+    link: "/en/tools/pomodoro",
   },
 ];
 ---
@@ -74,7 +74,7 @@ const tools = [
       <p class="text-gray-700 text-lg">
         {t('tools.footerText', locale)}
       </p>
-      <a href="/contact"
+      <a href="/en/contact"
          class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">
         {t('tools.contactLink', locale)}
       </a>

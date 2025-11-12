@@ -2,20 +2,20 @@
 import ToolsLayout from '../../layouts/ToolsLayout.astro';
 ---
 
-<ToolsLayout title="Siteswap Validator" icon="🔢">
+<ToolsLayout title="Validador Siteswap" icon="🔢">
   <section class="space-y-8 text-center">
     <p class="text-gray-700">
-      Enter a juggling pattern (e.g. <code>531</code> or <code>744</code>) to check if it’s valid.
+      Ingresa un patrón de malabarismo (ej. <code>531</code> o <code>744</code>) para verificar si es válido.
     </p>
 
     <input
       id="pattern"
       type="text"
-      placeholder="Enter Siteswap (e.g. 531)"
+      placeholder="Ingresa Siteswap (ej. 531)"
       class="w-full border border-gray-300 rounded px-4 py-2 text-center"
     />
     <button id="validate" class="mt-4 px-6 py-3 bg-gray-800 text-white rounded hover:bg-yellow-400 transition">
-      Validate
+      Validar
     </button>
 
     <div id="result" class="text-lg font-semibold text-gray-900 mt-6"></div>
@@ -39,12 +39,12 @@ import ToolsLayout from '../../layouts/ToolsLayout.astro';
       const pattern = (document.getElementById('pattern') as HTMLInputElement)!.value.trim();
       const result = document.getElementById('result');
       if (pattern === '') {
-        result!.textContent = 'Please enter a pattern.';
+        result!.textContent = 'Por favor ingresa un patrón.';
         result!.className = 'text-red-500 font-semibold mt-6';
         return;
       }
       const valid = isValidSiteswap(pattern);
-      result!.textContent = valid ? '✅ Valid Siteswap!' : '❌ Invalid pattern.';
+      result!.textContent = valid ? '✅ ¡Siteswap válido!' : '❌ Patrón inválido.';
       result!.className = valid
         ? 'text-green-600 font-semibold mt-6'
         : 'text-red-500 font-semibold mt-6';

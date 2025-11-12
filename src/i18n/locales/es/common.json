@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "tools": "Herramientas"
+  },
+  "home": {
+    "title": "Hola, soy Juliano",
+    "subtitle": "Ingeniero de software, músico, malabarista y artista del tejido. Exploro patrones en la vida y el código.",
+    "yarnArts": "Artes del Tejido",
+    "yarnArtsDesc": "Crochet y tejido, explorando algoritmos en patrones.",
+    "juggling": "Malabarismo",
+    "jugglingDesc": "Patrones y secuencias en movimiento, como diagramas de estado.",
+    "music": "Música",
+    "musicDesc": "Ritmo, armonía y patrones matemáticos inspiran la lógica.",
+    "languages": "Idiomas",
+    "languagesDesc": "Gramática y estructura como lógica, abstracción y herencia.",
+    "toolsLink": "Herramientas"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "intro": "Soy Juliano — un ingeniero de software que encuentra estructura, ritmo y creatividad no solo en el código, sino también en la música, los idiomas, el malabarismo y las artes del tejido.",
+    "softwareTitle": "Software y Resolución de Problemas",
+    "softwareDesc": "Me encanta construir sistemas confiables y elegantes — ya sea escribiendo APIs, diseñando arquitecturas, o creando experiencias de UI que hacen que las ideas complejas se sientan simples. Mi enfoque está fundamentado en el reconocimiento de patrones y la lógica clara, pero siempre abierto a la intuición artística.",
+    "yarnArtsTitle": "Artes del Tejido 🧶",
+    "yarnArtsDesc": "El crochet y el tejido son lenguajes de patrones. Cada puntada es una pequeña instrucción, como una línea de código. Entender los fundamentos me permite replicar o adaptar cualquier diseño — igual que dominar los fundamentos de la lógica de programación.",
+    "jugglingTitle": "Malabarismo 🎪",
+    "jugglingDesc": "La notación siteswap y los diagramas de malabarismo me recuerdan a las máquinas de estado y los gráficos. Me enseñan a descomponer el movimiento en datos y ver belleza en el equilibrio matemático.",
+    "musicTitle": "Música 🎵",
+    "musicDesc": "La música combina matemáticas y emoción — el ritmo y la armonía reflejan el tiempo y la arquitectura en el software. Veo cada sistema bien estructurado como una especie de composición.",
+    "languagesTitle": "Idiomas 🌍",
+    "languagesDesc": "Los idiomas naturales tienen sintaxis, semántica y contexto — igual que los lenguajes de programación. Estudiar su gramática y variaciones agudiza mi sentido de abstracción, herencia y diseño.",
+    "closing": "Estas disciplinas juntas dan forma a cómo diseño, aprendo y colaboro. Mi objetivo es construir software que se sienta intuitivo — donde la precisión técnica se encuentra con la claridad artística.",
+    "contactLink": "Contáctame"
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "intro": "Una colección de mi trabajo que fusiona ingeniería de software con creatividad — conectando lógica, ritmo y diseño a través de diferentes disciplinas.",
+    "projects": "Proyectos",
+    "viewProject": "Ver Proyecto"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "intro": "Ya sea que quieras discutir un proyecto, solicitar mentoría, o simplemente intercambiar ideas sobre software, creatividad o aprendizaje — me encantaría escucharte.",
+    "email": "Email",
+    "emailDesc": "Contáctame directamente:",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Conectemos profesionalmente:",
+    "github": "GitHub",
+    "githubDesc": "Explora mis proyectos open-source:",
+    "formTitle": "Envía un Mensaje",
+    "name": "Nombre",
+    "emailLabel": "Email",
+    "message": "Mensaje",
+    "sendMessage": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Gracias! Tu mensaje ha sido enviado exitosamente.",
+    "error": "Lo siento, hubo un error al enviar tu mensaje. Por favor intenta de nuevo."
+  },
+  "tools": {
+    "title": "Herramientas y Experimentos",
+    "intro": "Utilidades pequeñas y experimentos que reflejan cómo pienso sobre el código, estructura y creatividad. Cada una conecta lógica del software con la belleza encontrada en patrones cotidianos.",
+    "stitchCounter": "Contador de Puntos",
+    "stitchCounterDesc": "Un contador simple para proyectos de crochet y tejido — rastrea puntos, filas y progreso como ejecutando un algoritmo en forma de hilo.",
+    "siteswapValidator": "Validador Siteswap",
+    "siteswapValidatorDesc": "Ingresa un patrón de malabarismo y valida su notación Siteswap. Una herramienta pequeña que traduce movimiento en lógica y matemática.",
+    "bpmTap": "BPM Tap & Metrónomo",
+    "bpmTapDesc": "Toca siguiendo el ritmo para detectar pulsaciones por minuto o establece un tempo para tu práctica musical. Una demostración de precisión de timing y lógica rítmica.",
+    "pomodoro": "Temporizador Ritmo Pomodoro",
+    "pomodoroDesc": "Un temporizador de enfoque que fusiona gestión del tiempo con un toque de armonía visual — equilibrando productividad y flujo.",
+    "readySoon": "Listo pronto",
+    "prototype": "Prototipo",
+    "mvp": "MVP",
+    "comingSoon": "Próximamente",
+    "tryIt": "Pruébalo",
+    "footerText": "Estas son mis herramientas personales y experimentos creativos — evolucionando constantemente mientras exploro nuevas ideas y patrones.",
+    "contactLink": "Contáctame"
+  },
+  "footer": {
+    "copyright": "© 2025 Juliano. Todos los derechos reservados."
+  }
+}

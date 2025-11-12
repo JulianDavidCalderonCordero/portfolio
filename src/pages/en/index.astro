@@ -1,23 +1,12 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { loadTranslations, t } from '../utils/i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadTranslations, t } from '../../utils/i18n';
 
-// Get the user's preferred locale, defaulting to Spanish
-const preferredLocale = Astro.preferredLocale || 'es';
-
-// If the preferred locale is not Spanish, redirect to the appropriate locale
-if (preferredLocale !== 'es') {
-  const redirectUrl = getRelativeLocaleUrl(preferredLocale);
-  return Astro.redirect(redirectUrl);
-}
-
-// Since Spanish is the default and we're on the root, serve Spanish content
-const locale = 'es';
+const locale = Astro.currentLocale || 'en';
 await loadTranslations(locale);
 ---
 
-<BaseLayout title="Juliano | Software & Patrones de Vida">
+<BaseLayout title="Juliano | Software & Life Patterns">
   <section class="text-center space-y-6">
     <h1 class="text-4xl font-bold text-gray-900">{t('home.title', locale)}</h1>
     <p class="text-lg text-gray-700 max-w-xl mx-auto">

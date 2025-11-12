@@ -8,8 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   adapter: cloudflare(),
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
     routing: {
       prefixDefaultLocale: false
     }
